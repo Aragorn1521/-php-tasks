@@ -1,6 +1,6 @@
 <?php
 
-echo 'URL для просмотра заданий: http://localhost/chapters/1/task7.php'.'<br>';
+echo 'URL: http://localhost/chapters/1/task7.php'.'<br>';
 
 function scan ($dir, $tab){
     $d = opendir($dir);
@@ -21,4 +21,5 @@ function scan ($dir, $tab){
 
 scan('chapters', '');
 echo $name;
+
 
