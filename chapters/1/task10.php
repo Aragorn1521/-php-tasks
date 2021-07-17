@@ -12,11 +12,16 @@ $str = 'Привет Меня АА зАвут А а А а';
 $arr = mb_str_split($str,1);
 
 $counter = 0;
-for($i = 0;$i < count($arr); $i++)
+/*for($i = 0;$i < count($arr); $i++)
 {
    if($arr[$i] === 'А'){
        $counter++;
    }
    
+}*/
+foreach ($arr as $item) {
+    if($item === 'А'){
+        $counter++;
+    }
 }
 echo $counter;
