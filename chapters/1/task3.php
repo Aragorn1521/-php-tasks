@@ -9,8 +9,8 @@
  */
 
 
-$a = 3;
-$b = 5;
+$a = 5;
+$b = 3;
 $c = 4;
 
 //startTask
@@ -21,69 +21,8 @@ $cc = $c*$c;
 $arr = [$aa, $bb, $cc];
 //вроде эта сортировка)
 $sortArr = sort($arr);
-checkParams($sortArr[0], $sortArr[1], $sortArr[2]);
-//endTask
 
-if(($a > $b) || ($a > $c)){
-
-    $result =  $a ** 2;
-
-
-    switch ($result) {
-        case ($result == (($b ** 2) + ($c ** 2))) == true:
-            echo 'Этот треугольник прямоугольный';
-
-            break;
-         case ($result == (($b ** 2) + ($c ** 2))) == false:
-            echo 'Этот треугольник НЕ прямоугольный';
-
-            break;
-        default:
-            break;
-    }
-    checkParams($aa, $bb, $cc);
-}
-
-
-elseif(($b > $a) || ($b > $c)){
-
-   $result =  $b ** 2;
-     switch ($result) {
-        case ($result == (($a ** 2) + ($c ** 2))) == true:
-            echo 'Этот треугольник прямоугольный';
-
-            break;
-         case ($result == (($a ** 2) + ($c ** 2))) == false:
-            echo 'Этот треугольник НЕ прямоугольный';
-
-            break;
-        default:
-            break;
-    }
-    checkParams($bb, $aa, $cc);
-}
-
-
-elseif(($c > $b) || ($c > $a)){
-
-   $result =  $c ** 2;
-
-      switch ($result) {
-        case ($result == (($b ** 2) + ($a ** 2))) == true:
-            echo 'Этот треугольник прямоугольный';
-
-            break;
-         case ($result == (($b ** 2) + ($a ** 2))) == false:
-            echo 'Этот треугольник НЕ прямоугольный';
-
-            break;
-        default:
-            break;
-    }
-    checkParams($cc, $bb, $aa);
-} else {
-    echo 'Этот треугольник НЕ прямоугольный';
-}
+checkParams($arr[2], $arr[1], $arr[0]);
 
 function checkParams($aa, $bb, $cc) {
     if ($aa == $bb + $cc) {
@@ -92,3 +31,5 @@ function checkParams($aa, $bb, $cc) {
         echo 'Этот треугольник НЕ прямоугольный';
     }
 }
+
+

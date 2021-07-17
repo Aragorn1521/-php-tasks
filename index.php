@@ -1,17 +1,18 @@
 <?php
 
+
 echo 'URL: http://localhost/chapters/1/task7.php'.'<br>';
 
-function scan ($dir, $tab){
+function scan ($dir){
     $d = opendir($dir);
     while (false !== ($name = readdir($d))){
         if($name == '.' or $name == '..') continue;
         if(is_dir($dir . '/' . $name)){
-            echo "<b>".$tab."["."<a href=http://task/chapters/$name> $name</a>"."]" ."</b>"."<br>";
-            scan($dir . '/' . $name,$tab .$nbsp.$nbsp.$nbsp.$nbsp);
+            echo "<b>"."["."<a href=$dir/$name> $name</a>"."]" ."</b>"."<br>";
+            scan($dir . '/' . $name);
         }
  else {
-     echo $tab."<a href=http://task/chapters/1/$name> $name</a>"."<br>";
+     echo "<a href=$dir/$name> $name</a>"."<br>";
  }
     }
     closedir($d);    
@@ -19,7 +20,7 @@ function scan ($dir, $tab){
 
 
 
-scan('chapters', '');
-echo $name;
+scan('chapters');
+
 
 
