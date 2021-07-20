@@ -13,14 +13,16 @@ $arr = ['1','2','*','f','4','s','aq','12','*','2'];
 
 function Check($arr){
     $newArr = [];
-foreach ($arr as $value){
-    if ($value === '*'){
-        unset($value);
-        
-    }$newArr[] = $value;
-}
+    foreach ($arr as $value){
+        if ($value === '*'){
+            unset($value);
+        } else {
+            $newArr[] = $value;
+            $newArr[] = $value;
+        }
+    }
 
-$result = array_merge($newArr,$newArr);
-print_r($result);
+//$result = array_merge($newArr,$newArr);
+var_dump($newArr);
 }
 Check($arr);

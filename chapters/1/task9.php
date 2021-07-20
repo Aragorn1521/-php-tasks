@@ -18,7 +18,7 @@
 
 
 $arrayLetters = ['а','е','ё','и','о','у','э','ю','я'];
-$arr = ['а','б','привет','a','как','д','е','дела','з','?','и','к','что','л','и','м','н','ооооч  '];
+$arr = ['а','б','привет','a','как','д','е','дела','з','?','и','к','что','л','и','м','н','ооооч  ', 'я', 'я', 'я'];
 //$differentElements = array_diff($arr, $arrayLetters);
 //$result = array_diff($arr, $differentElements);
 
@@ -27,18 +27,18 @@ function Check($arrayLetters,$arr){
     $results = array_diff($arr, $differentElements);
     
     $newResult = [];
-    foreach ($arr as $value){
-        if(mb_strlen($value)>1){
+    foreach ($arr as $value) {
+        if(mb_strlen($value)>1) {
         $result = mb_str_split($value,1);
         $newResult[] = $result;
-    } 
+        }
     }
     $ArrayWrite = ArrayWrite($newResult,$arrayLetters);
     
     $otvet = array_merge($results,$ArrayWrite);
   
     
-    print_r($otvet);
+    var_dump($otvet);
       echo count($otvet);
 }
 
@@ -48,12 +48,11 @@ function ArrayWrite ($newResult,$arrayLetters){
     foreach ($newResult as $element){
         if(is_array($element) === true){
     $arrayOfElements = array_merge($arrayOfElements,$element);
-    }
+        }
     }
     $differentElements = array_diff($arrayOfElements, $arrayLetters);
     $results = array_diff($arrayOfElements, $differentElements);
     return $results;
-
 }
 Check($arrayLetters, $arr);
 
